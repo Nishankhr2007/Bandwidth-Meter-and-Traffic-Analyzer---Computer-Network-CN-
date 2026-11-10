@@ -1,0 +1,216 @@
+{
+    "version": "2",
+    "hosts": [
+        {
+            "number": "1",
+            "x": "100.0",
+            "y": "300.0",
+            "opts": {
+                "nodeNum": 1,
+                "ip": "10.0.0.1/24",
+                "defaultRoute": null,
+                "cpu": null,
+                "sched": "host",
+                "hostname": "h1"
+            }
+        },
+        {
+            "number": "2",
+            "x": "900.0",
+            "y": "300.0",
+            "opts": {
+                "nodeNum": 2,
+                "ip": "10.0.0.2/24",
+                "defaultRoute": null,
+                "cpu": null,
+                "sched": "host",
+                "hostname": "h2"
+            }
+        },
+        {
+            "number": "3",
+            "x": "500.0",
+            "y": "550.0",
+            "opts": {
+                "nodeNum": 3,
+                "ip": "10.0.0.3/24",
+                "defaultRoute": null,
+                "cpu": null,
+                "sched": "host",
+                "hostname": "h3"
+            }
+        }
+    ],
+    "switches": [
+        {
+            "number": "1",
+            "x": "300.0",
+            "y": "300.0",
+            "opts": {
+                "nodeNum": 1,
+                "dpid": "000000000001",
+                "protocols": "OpenFlow10",
+                "failMode": "secure",
+                "controllers": [
+                    "c0"
+                ],
+                "switchType": "default",
+                "hostname": "s1"
+            }
+        },
+        {
+            "number": "2",
+            "x": "450.0",
+            "y": "180.0",
+            "opts": {
+                "nodeNum": 2,
+                "dpid": "000000000002",
+                "protocols": "OpenFlow10",
+                "failMode": "secure",
+                "controllers": [
+                    "c0"
+                ],
+                "switchType": "default",
+                "hostname": "s2"
+            }
+        },
+        {
+            "number": "3",
+            "x": "450.0",
+            "y": "420.0",
+            "opts": {
+                "nodeNum": 3,
+                "dpid": "000000000003",
+                "protocols": "OpenFlow10",
+                "failMode": "secure",
+                "controllers": [
+                    "c0"
+                ],
+                "switchType": "default",
+                "hostname": "s3"
+            }
+        },
+        {
+            "number": "4",
+            "x": "650.0",
+            "y": "300.0",
+            "opts": {
+                "nodeNum": 4,
+                "dpid": "000000000004",
+                "protocols": "OpenFlow10",
+                "failMode": "secure",
+                "controllers": [
+                    "c0"
+                ],
+                "switchType": "default",
+                "hostname": "s4"
+            }
+        },
+        {
+            "number": "5",
+            "x": "800.0",
+            "y": "300.0",
+            "opts": {
+                "nodeNum": 5,
+                "dpid": "000000000005",
+                "protocols": "OpenFlow10",
+                "failMode": "secure",
+                "controllers": [
+                    "c0"
+                ],
+                "switchType": "default",
+                "hostname": "s5"
+            }
+        }
+    ],
+    "controllers": [
+        {
+            "x": "300.0",
+            "y": "80.0",
+            "opts": {
+                "controllerType": "remote",
+                "hostname": "c0",
+                "controllerProtocol": "tcp",
+                "remoteIP": "127.0.0.1",
+                "remotePort": 6633
+            }
+        }
+    ],
+    "links": [
+        {
+            "src": "h1",
+            "dest": "s1",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "s1",
+            "dest": "s2",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "s1",
+            "dest": "s3",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "s2",
+            "dest": "s4",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "s3",
+            "dest": "s4",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "s4",
+            "dest": "s5",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "s5",
+            "dest": "h2",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        },
+        {
+            "src": "h3",
+            "dest": "s3",
+            "opts": {
+                "bw": 10,
+                "delay": "5ms",
+                "loss": 0
+            }
+        }
+    ],
+    "application": {
+        "ipBase": "10.0.0.0/8"
+    }
+}
