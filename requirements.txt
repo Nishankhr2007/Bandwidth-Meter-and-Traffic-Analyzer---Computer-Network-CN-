@@ -1,2 +1,0 @@
-# No third-party Python packages are required by the project scripts.
-# Mininet, Open vSwitch, and POX are system/software prerequisites.
